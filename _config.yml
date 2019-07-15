@@ -1,7 +1,8 @@
 title: "Ingmar Posner"
-author: "Blog Author"
-description: "Really cool blog about ... something"
+author: "Ingmar Posner"
+description: "Artificial Intelligence, Machine Learning, Robotics and Beyond"
 lang: "en"
+url: http://iposner.github.io #hip adds as require by disqus 
 
 # Page settings
 permalink: /:title/          # see https://jekyllrb.com/docs/permalinks/
@@ -15,14 +16,17 @@ dark_header: true            # keep the header dark
 # style: minimal             # use a simpler style inspired by the minima theme
 
 navigation:                  # (optional) site navigation in the header
+  - hip-about.md
   - index.html
 #  - README.md
-#  - title: "https://"       # linking external sites is also supported
+# - title: "https://bla"    # linking external sites is also supported
+  
 
 icons:                       # (optional) icons in the header, see http://fontawesome.com/icons
-  envelope: "mailto:niklasbuschmann@users.noreply.github.com"
-  github: "https://github.com/niklasbuschmann/contrast"
-  twitter: "bla"
+  envelope: "mailto:ingmar@robots.ox.ac.uk"
+  #github: "https://github.com/niklasbuschmann/contrast"
+  linkedin: "http://www.linkedin.com/in/ingmar-posner-20b49a"
+  twitter: "https://twitter.com/IngmarPosner"
 
 # Pagination
 show_excerpts: false         # preview articles on the home page
@@ -30,10 +34,17 @@ paginate: 8                  # number of articles per page
 excerpt_separator: "\n\n\n"  # indicate the end of the excerpt by two blank lines
 
 comments:                    # embed disqus or isso comments
-#  disqus: ""
+  disqus:   ""
 #  isso: ""
+
+
+scholar:
+  style: mla
+
 
 plugins: 
  - jekyll-feed
  - jekyll-paginate
  - jekyll-default-layout
+ - jekyll-scholar
+
