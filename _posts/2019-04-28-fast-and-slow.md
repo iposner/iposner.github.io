@@ -34,6 +34,7 @@ Consquently, by learning ever more complex mappingf from increasingly involved o
 [![dexterity-intro](/assets/figures/fast-and-slow/dexterity-intro.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/dexterity-intro.m4v)
 [![dexterity-oracle](/assets/figures/fast-and-slow/dexterity-oracle.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/dexterity-oracle.m4v)
 [![dexterity-model](/assets/figures/fast-and-slow/dexterity-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/dexterity-model.pdf)
+
 *Figure 1: an illustration of game play inspired by DeepMind's [AlphaGo](https://deepmind.com/research/alphago/) series [top row] and the [Learning Dexterity](https://openai.com/blog/learning-dexterity/) project published by OpenAI in 2018 [bottom row] enabled by deep learning. On the left is an introduction to the application, the middle column gives a flavour of the __oracle__ and the right illustrates the __model__ which captures the oracle's knowledge.*
 
 But we can take an even broader view of what constitutes and oracle. Figure 2 shows an example of hundreds of person hours of systems engineering being distilled (via the automatic generation of training data) into a machine learning model, which predicts where a human might drive given a particular situation (see [Path Proposals](https://arxiv.org/pdf/1610.01238.pdf) for details). Another increasingly common application is the learning of intuitive physics models in which the outcome of a particular scenario is predicted by a model trained on data arrived at through physical simulation. The [ShapeStacks](http://openaccess.thecvf.com/content_ECCV_2018/papers/Oliver_Groth_ShapeStacks_Learning_Vision-Based_ECCV_2018_paper.pdf) study, for example, amongst other things determines whether a particular toy block tower is stable or otherwise. It does so by training a neural network model on image data generated using a physics simulator - thus implicitly encapsulating knowledge of the physical world.
@@ -45,11 +46,13 @@ But we can take an even broader view of what constitutes and oracle. Figure 2 sh
 [![intuitive-physics-intro](/assets/figures/fast-and-slow/intutive-physics.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/intutive-physics.m4v)
 [![intuitive-physics-oracle](/assets/figures/fast-and-slow/intutive-physics-oracle.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/intutive-physics-oracle.m4v)
 [![intuitive-physics-model](/assets/figures/fast-and-slow/intuitive-physics-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/intuitive-physics-model.pdf)
+
 *Figure 2: a system predicting where a human might drive in a particular situation as described in this paper on [Path Proposals](https://arxiv.org/pdf/1610.01238.pdf) [top row] and an intuitive physics application as described in [ShapeStacks](http://openaccess.thecvf.com/content_ECCV_2018/papers/Oliver_Groth_ShapeStacks_Learning_Vision-Based_ECCV_2018_paper.pdf), in which a model learns to predict the stability of a block tower based on physical simulations [bottom row]. As before, on the left is an introduction to the application, the middle column gives a flavour of the __oracle__ and the right illustrates the __model__ which captures the oracle's knowledge.*
 
 Faced with an image of a block tower, we do not tend to write down the laws of physics and analyse the particular setup. We have a gut-feeling, an intuitive response. Importantly, owing to their ability to mimic the expertise of an  oracle in a time (or generally resource) efficient manner, one might view the execution of a neural network model as analogous to an ***intuitive response***. And of course we also have accesss to a (very) broad class of oracles, which we might (generously perhaps, but with artistic license) refer to as ***reasoning*** systems. These then constitute analogues to System 1 and System 2. A Dual Process Theory for robots has thus firmly moved within reach. 
 
 [![dpt-adjectives](/assets/figures/fast-and-slow/dpt-robots.pdf)](/assets/figures/fast-and-slow/dpt-robots.pdf)
+
 *Figure 3: A Dual Process Theory for Robots*
 
 
@@ -74,11 +77,13 @@ As a final thought for this post we offer a view of this distillation process as
 [![stacking-intro](/assets/figures/fast-and-slow/stacking-motivation.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/stacking-motivation.m4v)
 [![stacking-oracle](/assets/figures/fast-and-slow/stacking-system2.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/stacking-system2.m4v)
 [![stacking-model](/assets/figures/fast-and-slow/stacking-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/stacking-model.pdf)
+
 *Figure 4: Practising to stack.*
 
 Combining a sense for stackability with that for stability mentioned above leads to an intuitive and scalable way in which towers are built: pick the next most stackable item in its most stackable pose and place it such that the overall construct looks stable (see Figure 5)[^1]. 
 
 [![intuitive-stacking](/assets/figures/fast-and-slow/intuitive-stacking.m4v)](/assets/figures/fast-and-slow/intuitive-stacking.m4v)
+
 *Figure 5: Stacking based on two intuitions.*
 
 
