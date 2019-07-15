@@ -4,7 +4,7 @@ mathjax: true
 ---
 
 
-*[Since early 2018 I have given a number of public and academic talks on Robots Thinking Fast and Slow. All the illustrations in this post are taken from the slide decks accompanying these talk.]* 
+*[Since early 2018 I have given a number of public and academic talks on Robots Thinking Fast and Slow. All the illustrations in this post are taken from the slide decks accompanying these talks.]* 
 
 Recent advances in AI technology have built significant excitement as to what our robots may be able to do for us in the future. Progress is truly inspirational. ***But where, you may ask, are the robots?*** Why can I buy a voice assistant but not a robust and versatile household robot? The answer lies in the fact that embodiment - the notion of a physical agent acting and interacting in the real world - poses a particular set of challenges. And opportunities.
 
@@ -28,25 +28,26 @@ The learning of mappings of inputs to outputs has, of course, been a theme in ML
 
 Consquently, by learning ever more complex mappingf from increasingly involved oracles we now routinely endow our agents with an ability to perform complex tasks at useful execution speeds. In the view offered here, for example, DeepMind's [AlphaGo](https://deepmind.com/research/alphago/) distils knowledge from Monte Carlo Tree Search (the oracle) and self-play into a model which predicts value and next move given a particular position. (The connection between neural network models trained using MCTS and more generally in an Reinforcement Learning context and the Fast and Slow paradigm has not gone unnoticed. It is subject, for example, of [this post](https://davidbarber.github.io/blog/2017/11/07/Learning-From-Scratch-by-Thinking-Fast-and-Slow-with-Deep-Learning-and-Tree-Search/) by David Barber and the [accompanying paper](https://arxiv.org/pdf/1705.08439.pdf) as well as in this recent [TICS paper](https://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613%2819%2930061-0) by DeepMind.) Another example is OpenAI's [Learning Dexterity](https://openai.com/blog/learning-dexterity/) project, which distils knowledge from reinforcement learning (essentially trial and error) using domain randomisation (the combined oracle) into a model which can control a Shadow Hand to achieve a certain target position in a dexterous manipulation task. 
 
-[![game-play-intro](/assets/figures/fast-and-slow/game-play-intro.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/game-play-intro.pdf)
-[![game-play-oracle](/assets/figures/fast-and-slow/game-play-oracle.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/game-play-oracle.pdf)
-[![game-play-model](/assets/figures/fast-and-slow/game-play-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/game-play-model.pdf)
-[![dexterity-intro](/assets/figures/fast-and-slow/dexterity-intro.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/dexterity-intro.m4v)
-[![dexterity-oracle](/assets/figures/fast-and-slow/dexterity-oracle.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/dexterity-oracle.m4v)
-[![dexterity-model](/assets/figures/fast-and-slow/dexterity-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/dexterity-model.pdf)
+[![game-play-intro](/assets/figures/fast-and-slow/game-play-intro.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/game-play-intro.pdf)
+[![game-play-oracle](/assets/figures/fast-and-slow/game-play-oracle.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/game-play-oracle.pdf)
+[![game-play-model](/assets/figures/fast-and-slow/game-play-model.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/game-play-model.pdf)
+
+[![dexterity-intro](/assets/figures/fast-and-slow/dexterity-intro.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/dexterity-intro.m4v)
+[![dexterity-oracle](/assets/figures/fast-and-slow/dexterity-oracle.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/dexterity-oracle.m4v)
+[![dexterity-model](/assets/figures/fast-and-slow/dexterity-model.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/dexterity-model.pdf)
 
 
 *Figure 1: an illustration of game play inspired by DeepMind's [AlphaGo](https://deepmind.com/research/alphago/) series [top row] and the [Learning Dexterity](https://openai.com/blog/learning-dexterity/) project published by OpenAI in 2018 [bottom row] enabled by deep learning. On the left is an introduction to the application, the middle column gives a flavour of the __oracle__ and the right illustrates the __model__ which captures the oracle's knowledge.*
 
 But we can take an even broader view of what constitutes and oracle. Figure 2 shows an example of hundreds of person hours of systems engineering being distilled (via the automatic generation of training data) into a machine learning model, which predicts where a human might drive given a particular situation (see [Path Proposals](https://arxiv.org/pdf/1610.01238.pdf) for details). Another increasingly common application is the learning of intuitive physics models in which the outcome of a particular scenario is predicted by a model trained on data arrived at through physical simulation. The [ShapeStacks](http://openaccess.thecvf.com/content_ECCV_2018/papers/Oliver_Groth_ShapeStacks_Learning_Vision-Based_ECCV_2018_paper.pdf) study, for example, amongst other things determines whether a particular toy block tower is stable or otherwise. It does so by training a neural network model on image data generated using a physics simulator - thus implicitly encapsulating knowledge of the physical world.
 
-[![path-prop-intro](/assets/figures/fast-and-slow/path-prop-intro.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/path-prop-intro.m4v)
-[![path-prop-oracle](/assets/figures/fast-and-slow/path-prop-oracle.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/path-prop-oracle.m4v)
-[![path-prop-model](/assets/figures/fast-and-slow/path-prop-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/path-prop-model.pdf)
+[![path-prop-intro](/assets/figures/fast-and-slow/path-prop-intro.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/path-prop-intro.m4v)
+[![path-prop-oracle](/assets/figures/fast-and-slow/path-prop-oracle.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/path-prop-oracle.m4v)
+[![path-prop-model](/assets/figures/fast-and-slow/path-prop-model.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/path-prop-model.pdf)
 
-[![intuitive-physics-intro](/assets/figures/fast-and-slow/intutive-physics.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/intutive-physics.m4v)
-[![intuitive-physics-oracle](/assets/figures/fast-and-slow/intutive-physics-oracle.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/intutive-physics-oracle.m4v)
-[![intuitive-physics-model](/assets/figures/fast-and-slow/intuitive-physics-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/intuitive-physics-model.pdf)
+[![intuitive-physics-intro](/assets/figures/fast-and-slow/intutive-physics.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/intutive-physics.m4v)
+[![intuitive-physics-oracle](/assets/figures/fast-and-slow/intutive-physics-oracle.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/intutive-physics-oracle.m4v)
+[![intuitive-physics-model](/assets/figures/fast-and-slow/intuitive-physics-model.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/intuitive-physics-model.pdf)
 
 
 *Figure 2: a system predicting where a human might drive in a particular situation as described in this paper on [Path Proposals](https://arxiv.org/pdf/1610.01238.pdf) [top row] and an intuitive physics application as described in [ShapeStacks](http://openaccess.thecvf.com/content_ECCV_2018/papers/Oliver_Groth_ShapeStacks_Learning_Vision-Based_ECCV_2018_paper.pdf), in which a model learns to predict the stability of a block tower based on physical simulations [bottom row]. As before, on the left is an introduction to the application, the middle column gives a flavour of the __oracle__ and the right illustrates the __model__ which captures the oracle's knowledge.*
@@ -76,9 +77,9 @@ While distilling performance into a machine learning model is one way of giving 
 
 As a final thought for this post we offer a view of this distillation process as the ability, in the System 1 and System 2 analogy, to transition from one system to the other via deliberate, effortful practice. Consider a toddler learning how to stack blocks such as the one on the left in Figure 4. When she is more experienced we might reasonably expect her to simply stack objects almost without thinking about it (an intuitive response). Would a machine go through a similar process it might look like the trial-and-error experiment in the middle pane in Figure 4, which is also part of the [ShapeStacks](http://openaccess.thecvf.com/content_ECCV_2018/papers/Oliver_Groth_ShapeStacks_Learning_Vision-Based_ECCV_2018_paper.pdf) study. Here different shapes are tried in different orientations as to how well they support a building block (green = good, red = bad). This gives rise to a sense of *stackability* for particular building shapes. 
 
-[![stacking-intro](/assets/figures/fast-and-slow/stacking-motivation.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/stacking-motivation.m4v)
-[![stacking-oracle](/assets/figures/fast-and-slow/stacking-system2.m4v){:style="width: 299px"}](/assets/figures/fast-and-slow/stacking-system2.m4v)
-[![stacking-model](/assets/figures/fast-and-slow/stacking-model.pdf){:style="width: 299px"}](/assets/figures/fast-and-slow/stacking-model.pdf)
+[![stacking-intro](/assets/figures/fast-and-slow/stacking-motivation.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/stacking-motivation.m4v)
+[![stacking-oracle](/assets/figures/fast-and-slow/stacking-system2.m4v){:style="width: 200px"}](/assets/figures/fast-and-slow/stacking-system2.m4v)
+[![stacking-model](/assets/figures/fast-and-slow/stacking-model.pdf){:style="width: 200px"}](/assets/figures/fast-and-slow/stacking-model.pdf)
 
 
 *Figure 4: Practising to stack.*
